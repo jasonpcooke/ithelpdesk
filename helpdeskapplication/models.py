@@ -8,10 +8,9 @@ class Person(models.Model):
     password = models.CharField(max_length=128, null=False)
     firstname = models.CharField(max_length=50, null=False)
     surname = models.CharField(max_length=50, null=False)
-    isadmin = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"{self.user_id} {self.email} {self.password} {self.firstname} {self.surname} {self.isadmin}"
+        return f"{self.user_id} {self.email} {self.password} {self.firstname} {self.surname}"
 
 # Asset
 class Asset(models.Model):
