@@ -10,15 +10,20 @@ class Person(models.Model):
     surname = models.CharField(max_length=50, null=False)
     isadmin = models.BooleanField(default=False)
 
+    def __str__(self):
+        return f"{self.user_id} {self.email} {self.password} {self.firstname} {self.surname} {self.isadmin}"
+
 # Asset
 class Asset(models.Model):
     asset_id = models.AutoField(primary_key=True)
-    user = models.ForeignKey(Person)
+    user = models.ForeignKey(Person, on_delete=models.CASCADE)
     asset_type = models.PositiveIntegerField(validators=[MaxValueValidator(1)])
 
-# Request
+    def __str__(self):
+        return f"{self.asset_id} {self.user} {self.asset_type}"
+
+# ServiceRequest
 class ServiceRequest(models.Model):
     request_id = models.AutoField(primary_key=True)
     request_description = models.CharField(max_length=255, null=False)
-    user = models.ForeignKey(Person)
-    asset = models.ForeignKey(Asset)
+    asset = models.ForeignKey(Asset, on_delete=models.CASCADE)
