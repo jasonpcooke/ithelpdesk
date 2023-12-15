@@ -25,6 +25,15 @@ in terminal, run
   
   `python manage.py runserver`  
     
-and head to the URL http://127.0.0.1:8000/admin/ .
-This you should be presented with a login page that looks like this:
-![alt text](media/adminloginscreen.png)
+and head to the URL http://127.0.0.1:8000/helpdeskapplication/login .  
+Use the super user details entered in terminal to access the admin rest screen, provided by django's rest API.  
+
+In here, you can interact with the relevant tables for the application.
+
+Click change on the Persons table, open up your super user details and copy the encrypted password.  
+  
+Next, add a new Person to the Persons table. Here, you can enter an email, firstname and surname, and paste that previously used password into the password box. Finally, tick is active and is staff, and save the record.  
+  
+With this new user, you should now be able to access the site. Click view site in the top right of the webpage to return to the login page. This time, enter the email of the new user and the password of  your first user.  
+
+Welcome to the dashboard! Feel free to play around as you please.
